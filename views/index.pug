@@ -1,0 +1,27 @@
+extends layout
+block styles
+  link(rel='stylesheet', href='/app/bower_components/bootstrap/dist/css/bootstrap.min.css')
+
+block navbar
+  ul.nav.nav-tabs.pull-right
+    li
+      a(href="/blog-preview") Ver posts 
+    li
+      a(href="/users/logout") Logout
+block content
+  h1= title
+  p Welcome to #{title}
+  div#editor
+  button#send-text.btn.btn-default Enviar Texto
+
+block scripts
+  script(src='/app/bower_components/jquery/dist/jquery.min.js')
+  script(src='/app/bower_components/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/app/bower_components/neon/neon.js')
+  script(src='/app/bower_components/neon/stdlib/bubbling_support.js')
+  script(src='/app/bower_components/neon/stdlib/node_support.js')
+  script(src='/app/bower_components/neon/stdlib/custom_event.js')
+  script(src='/app/bower_components/neon/stdlib/custom_event_support.js')
+  script(src='/app/bower_components/neon/stdlib/widget.js')
+  script(src='/app/bower_components/tinymce/tinymce.min.js')
+  script(src='/javascripts/app.js')

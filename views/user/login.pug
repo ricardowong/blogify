@@ -1,0 +1,31 @@
+extends ../layout
+block styles
+  link(rel='stylesheet', href='/app/bower_components/bootstrap/dist/css/bootstrap.min.css')
+
+block navbar
+  div.nav
+    a.pull-right(href="/users/signup")
+block content
+  h1 Log in!
+  div.alert.alert-danger
+    p= error
+  form(method="post", action="/users/login")
+    div.form-group
+      label(for="email") email
+      input.form-control(type="email", name="email", id="email")
+    div.form-group
+      label(for="password") password
+      input.form-control(type="password", name="password", id="password")
+    button.btn.btn-default Login
+
+block scripts
+  script(src='/app/bower_components/jquery/dist/jquery.min.js')
+  script(src='/app/bower_components/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/app/bower_components/neon/neon.js')
+  script(src='/app/bower_components/neon/stdlib/bubbling_support.js')
+  script(src='/app/bower_components/neon/stdlib/node_support.js')
+  script(src='/app/bower_components/neon/stdlib/custom_event.js')
+  script(src='/app/bower_components/neon/stdlib/custom_event_support.js')
+  script(src='/app/bower_components/neon/stdlib/widget.js')
+  script(src='/app/bower_components/tinymce/tinymce.min.js')
+  script(src='/javascripts/login.js')
